@@ -144,4 +144,18 @@ view: marketing_campaign {
   measure: count {
     type: count
   }
+
+  measure: Customer_count {
+    type: count_distinct
+    sql:  ${Customer_id} ;;
+
+  }
+
+  measure: Income{
+    type: sum
+    sql:  ${income} ;;
+
+  }
+
+
 }
