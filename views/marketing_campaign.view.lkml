@@ -106,12 +106,12 @@ view: marketing_campaign {
     description: "Number of purchases made with a discount"
     sql: ${TABLE}.NumDealsPurchases ;;
   }
-  dimension: num_store_purchases {
+  dimension: Acquisti_InNegozio {
     type: number
     description: "Number of purchases made directly in stores"
     sql: ${TABLE}.NumStorePurchases ;;
   }
-  dimension: num_web_purchases {
+  dimension: Acquisti_Online {
     type: number
     description: "Number of purchases made through the company’s website"
     sql: ${TABLE}.NumWebPurchases ;;
