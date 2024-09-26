@@ -1,0 +1,148 @@
+view: marketing_campaign {
+  sql_table_name: `looker_demo.marketing_campaign` ;;
+  drill_fields: [id]
+
+  dimension: id {
+    primary_key: yes
+    type: number
+    description: "Customer's unique identifier"
+    sql: ${TABLE}.ID ;;
+  }
+  dimension: accepted_cmp1 {
+    type: yesno
+    description: "true if customer accepted the offer in the 1st campaign, false otherwise"
+    sql: ${TABLE}.AcceptedCmp1 ;;
+  }
+  dimension: accepted_cmp2 {
+    type: yesno
+    description: "true if customer accepted the offer in the 2nd campaign, false otherwise"
+    sql: ${TABLE}.AcceptedCmp2 ;;
+  }
+  dimension: accepted_cmp3 {
+    type: yesno
+    description: "true if customer accepted the offer in the 3rd campaign, false otherwise"
+    sql: ${TABLE}.AcceptedCmp3 ;;
+  }
+  dimension: accepted_cmp4 {
+    type: yesno
+    description: "true if customer accepted the offer in the 4th campaign, false otherwise"
+    sql: ${TABLE}.AcceptedCmp4 ;;
+  }
+  dimension: accepted_cmp5 {
+    type: yesno
+    description: "true if customer accepted the offer in the 5th campaign, false otherwise"
+    sql: ${TABLE}.AcceptedCmp5 ;;
+  }
+  dimension: complain {
+    type: yesno
+    description: "true if the customer complained in the last 2 years, false otherwise"
+    sql: ${TABLE}.Complain ;;
+  }
+  dimension_group: dt_customer {
+    type: time
+    description: "Date of customer's enrollment with the company"
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.Dt_Customer ;;
+  }
+  dimension: education {
+    type: string
+    description: "Customer's education level"
+    sql: ${TABLE}.Education ;;
+  }
+  dimension: income {
+    type: number
+    description: "Customer's yearly household income"
+    sql: ${TABLE}.Income ;;
+  }
+  dimension: kidhome {
+    type: number
+    description: "Number of children in customer's household"
+    sql: ${TABLE}.Kidhome ;;
+  }
+  dimension: marital_status {
+    type: string
+    description: "Customer's marital status"
+    sql: ${TABLE}.Marital_Status ;;
+  }
+  dimension: mnt_fish_products {
+    type: number
+    description: "Amount spent on fish in last 2 years"
+    sql: ${TABLE}.MntFishProducts ;;
+  }
+  dimension: mnt_fruits {
+    type: number
+    description: "Amount spent on fruits in last 2 years"
+    sql: ${TABLE}.MntFruits ;;
+  }
+  dimension: mnt_gold_prods {
+    type: number
+    description: "Amount spent on gold in last 2 years"
+    sql: ${TABLE}.MntGoldProds ;;
+  }
+  dimension: mnt_meat_products {
+    type: number
+    description: "Amount spent on meat in last 2 years"
+    sql: ${TABLE}.MntMeatProducts ;;
+  }
+  dimension: mnt_sweet_products {
+    type: number
+    description: "Amount spent on sweets in last 2 years"
+    sql: ${TABLE}.MntSweetProducts ;;
+  }
+  dimension: mnt_wines {
+    type: number
+    description: "Amount spent on wine in last 2 years"
+    sql: ${TABLE}.MntWines ;;
+  }
+  dimension: num_catalog_purchases {
+    type: number
+    description: "Number of purchases made using a catalogue"
+    sql: ${TABLE}.NumCatalogPurchases ;;
+  }
+  dimension: num_deals_purchases {
+    type: number
+    description: "Number of purchases made with a discount"
+    sql: ${TABLE}.NumDealsPurchases ;;
+  }
+  dimension: num_store_purchases {
+    type: number
+    description: "Number of purchases made directly in stores"
+    sql: ${TABLE}.NumStorePurchases ;;
+  }
+  dimension: num_web_purchases {
+    type: number
+    description: "Number of purchases made through the company’s website"
+    sql: ${TABLE}.NumWebPurchases ;;
+  }
+  dimension: num_web_visits_month {
+    type: number
+    description: "Number of visits to company’s website in the last month"
+    sql: ${TABLE}.NumWebVisitsMonth ;;
+  }
+  dimension: recency {
+    type: number
+    description: "Number of days since customer's last purchase"
+    sql: ${TABLE}.Recency ;;
+  }
+  dimension: response {
+    type: yesno
+    description: "true if customer accepted the offer in the last campaign, false otherwise"
+    sql: ${TABLE}.Response ;;
+  }
+  dimension: teenhome {
+    type: number
+    description: "Number of teenagers in customer's household"
+    sql: ${TABLE}.Teenhome ;;
+  }
+  dimension: year_birth {
+    type: number
+    description: "Customer's birth year"
+    sql: ${TABLE}.Year_Birth ;;
+  }
+  measure: count {
+    type: count
+    drill_fields: [id]
+  }
+}
