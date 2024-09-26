@@ -66,32 +66,32 @@ view: marketing_campaign {
     description: "Customer's marital status"
     sql: ${TABLE}.Marital_Status ;;
   }
-  dimension: mnt_fish_products {
+  dimension: Spesa_Prodotti_Ittici{
     type: number
     description: "Amount spent on fish in last 2 years"
     sql: ${TABLE}.MntFishProducts ;;
   }
-  dimension: mnt_fruits {
+  dimension: Spesa_frutta {
     type: number
     description: "Amount spent on fruits in last 2 years"
     sql: ${TABLE}.MntFruits ;;
   }
-  dimension: mnt_gold_prods {
+  dimension: Spesa_prodotti_oro {
     type: number
     description: "Amount spent on gold in last 2 years"
     sql: ${TABLE}.MntGoldProds ;;
   }
-  dimension: mnt_meat_products {
+  dimension: Spesa_carne {
     type: number
     description: "Amount spent on meat in last 2 years"
     sql: ${TABLE}.MntMeatProducts ;;
   }
-  dimension: mnt_sweet_products {
+  dimension: Spesa_prodotti_dolci {
     type: number
     description: "Amount spent on sweets in last 2 years"
     sql: ${TABLE}.MntSweetProducts ;;
   }
-  dimension: mnt_wines {
+  dimension: Spesa_vino {
     type: number
     description: "Amount spent on wine in last 2 years"
     sql: ${TABLE}.MntWines ;;
