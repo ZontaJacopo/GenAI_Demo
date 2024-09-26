@@ -1,8 +1,8 @@
 view: marketing_campaign {
   sql_table_name: `looker_demo.marketing_campaign` ;;
-  drill_fields: [id]
+  drill_fields: [Customer_id]
 
-  dimension: id {
+  dimension: Customer_id {
     primary_key: yes
     type: number
     description: "Customer's unique identifier"
@@ -143,6 +143,5 @@ view: marketing_campaign {
   }
   measure: count {
     type: count
-    drill_fields: [id]
   }
 }
