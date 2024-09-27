@@ -141,6 +141,17 @@ view: marketing_campaign {
     description: "Customer's birth year"
     sql: ${TABLE}.Year_Birth ;;
   }
+
+  dimension: Customer_name {
+    type: string
+    description: "Customer's name"
+    sql: ${TABLE}.Customer_Name ;;
+  }
+  dimension: Region {
+    type: string
+    description: "Customer's region"
+    sql: ${TABLE}.Region ;;
+  }
   measure: count {
     type: count
   }
