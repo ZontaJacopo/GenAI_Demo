@@ -163,9 +163,60 @@ view: marketing_campaign {
   }
 
   measure: Income{
-    type: sum
+    type: average
     sql:  ${income} ;;
 
+  }
+
+  measure: SpesaMedia_frutta {
+    type: average
+    sql: ${Spesa_frutta} ;;
+    value_format_name: eur_0
+  }
+
+  measure: SpesaMedia_carne {
+    type: average
+    sql: ${Spesa_carne} ;;
+    value_format_name: eur_0
+  }
+
+  measure: SpesaMedia_pesce {
+    type: average
+    sql: ${Spesa_Prodotti_Ittici} ;;
+    value_format_name: eur_0
+  }
+
+  measure: SpesaMedia_oro {
+    type: average
+    sql: ${Spesa_prodotti_oro} ;;
+    value_format_name: eur_0
+  }
+
+  measure: SpesaMedia_vino {
+    type: average
+    sql: ${Spesa_vino} ;;
+    value_format_name: eur_0
+  }
+
+  measure: SpesaMedia_dolci {
+    type: average
+    sql: ${Spesa_prodotti_dolci} ;;
+    value_format_name: eur_0
+  }
+
+  measure: EtaMedia {
+    type: average
+    sql: EXTRACT(YEAR FROM Current_date())-${year_birth};;
+  }
+
+  measure: SpesaOnline {
+    type: sum
+    sql: ${Acquisti_Online};;
+  }
+
+  measure: SpesaNegozio {
+    type: sum
+    sql: ${Acquisti_InNegozio};;
   }
 
 
